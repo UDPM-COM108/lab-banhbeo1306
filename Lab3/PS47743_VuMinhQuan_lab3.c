@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include<stdlib.h>
 int main(){
     char lc;
     
@@ -8,7 +9,8 @@ int main(){
     printf("\n1 - CHƯƠNG TRÌNH TÍNH HỌC LỰC\n");
     printf("2 - Giải Phương trình bậc 1\n");
     printf("3 - Giải Phương trình bậc 2\n");
-    printf("x - Thoat\n");
+    printf("4 - chuc nang tinh tien dien\n");
+    printf("0 - Thoat\n");
     printf("Nhap lua chon cua ban\n");
     scanf("%c",&lc);
     switch (lc)
@@ -115,11 +117,38 @@ int main(){
             }
          
         }
-    
-    default: printf("\nVui long nhap 1,2,3 hoac x");
+        break;
+        case '4': 
+        float tiendien;
+        printf("\nChuc nang tinh tien dien");
+        printf("Nhap so tien dien:");
+        scanf("%f", &tiendien);
+        if (tiendien<50)
+        {
+            tiendien = tiendien *1.678;
+        }else{if ( tiendien < 100 )
+        {tiendien = tiendien * 1.734;}
+        else{
+            if (tiendien < 200)
+        {tiendien=tiendien * 2.014;}
+        else{ if (tiendien<300)
+        { tiendien = tiendien * 2.536;}
+        else{
+            if (tiendien<400)
+            {tiendien=tiendien*2.834;}
+        else{tiendien=tiendien*2.927;}
+                    }
+                }
+            }
+        }
+        printf("tien dien cua ban la %f",tiendien);
+        break;
+        case(0):{
+            printf("see u again");
+            exit;}
+    default: printf("vui long nhap 1,2,3,0");
         break;
     }
-    
-    } while (lc != 'x');
+    } while (lc != '0');
     return 0;
 }
